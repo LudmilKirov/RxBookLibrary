@@ -4,24 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 import com.example.rxbooklibrary.adaptors.BookRecyclerAdaptor;
 import com.example.rxbooklibrary.models.GoogleBookRetrofit;
+import com.example.rxbooklibrary.models.VolumeInfo;
+import com.example.rxbooklibrary.network.ApiCallInterface;
+import com.example.rxbooklibrary.network.RestClient;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+import io.reactivex.Single;
+import retrofit2.Response;
+
+public class MainActivity extends AppCompatActivity implements BookRecyclerAdaptor.OnBookListener {
     private static final String TAG = "MainActivity";
 
     //UI Components
     private RecyclerView mRecyclerView;
 
     //Vars
-    private ArrayList<GoogleBookRetrofit> mGoogleBookRetrofitsList = new ArrayList<>();
+    private ArrayList<VolumeInfo> mVolumeInfos = new ArrayList<>();
     private BookRecyclerAdaptor mBookRecyclerAdaptor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +38,13 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView=findViewById(R.id.recyclerView);
         initRecyclerView();
         fakeBooks();
-
     }
 
     private void fakeBooks(){
         for (int i = 0; i <1000 ; i++) {
-            GoogleBookRetrofit googleBookRetrofit = new GoogleBookRetrofit();
-            googleBookRetrofit.setKind("kind @"+i);
-            mGoogleBookRetrofitsList.add(googleBookRetrofit);
+            VolumeInfo volumeInfo = new VolumeInfo();
+            volumeInfo.setTitle("kind @"+i);
+            mVolumeInfos.add(volumeInfo);
         }
         mBookRecyclerAdaptor.notifyDataSetChanged();
     }
@@ -44,7 +52,18 @@ public class MainActivity extends AppCompatActivity {
     private void initRecyclerView(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
-        mBookRecyclerAdaptor = new BookRecyclerAdaptor(mGoogleBookRetrofitsList);
+        mBookRecyclerAdaptor = new BookRecyclerAdaptor(mVolumeInfos,this);
         mRecyclerView.setAdapter(mBookRecyclerAdaptor);
     }
+
+    @Override
+    public void onBookClick(int position) {
+        Log.d(TAG, "onBookClick: clicked");
+
+        Intent intent = new Intent(this,detailBookActivity.class);
+        intent.putExtra("selected_note",mVolumeInfos.get(position));
+        startActivity(intent);
+    }
+
+
 }

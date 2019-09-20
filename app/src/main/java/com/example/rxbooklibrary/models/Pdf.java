@@ -10,6 +10,22 @@ public class Pdf {
     @Expose
     private Boolean isAvailable;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Pdf() {
+    }
+
+    /**
+     * 
+     * @param isAvailable
+     */
+    public Pdf(Boolean isAvailable) {
+        super();
+        this.isAvailable = isAvailable;
+    }
+
     public Boolean getIsAvailable() {
         return isAvailable;
     }

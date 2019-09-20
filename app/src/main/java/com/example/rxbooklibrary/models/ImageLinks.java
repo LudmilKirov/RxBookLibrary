@@ -13,6 +13,24 @@ public class ImageLinks {
     @Expose
     private String thumbnail;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public ImageLinks() {
+    }
+
+    /**
+     * 
+     * @param thumbnail
+     * @param smallThumbnail
+     */
+    public ImageLinks(String smallThumbnail, String thumbnail) {
+        super();
+        this.smallThumbnail = smallThumbnail;
+        this.thumbnail = thumbnail;
+    }
+
     public String getSmallThumbnail() {
         return smallThumbnail;
     }

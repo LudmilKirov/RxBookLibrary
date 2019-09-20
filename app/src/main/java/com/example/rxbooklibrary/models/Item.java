@@ -1,6 +1,8 @@
 
 package com.example.rxbooklibrary.models;
 
+import android.os.Parcel;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -30,6 +32,36 @@ public class Item {
     @SerializedName("searchInfo")
     @Expose
     private SearchInfo searchInfo;
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Item() {
+    }
+
+    /**
+     * 
+     * @param saleInfo
+     * @param id
+     * @param searchInfo
+     * @param etag
+     * @param volumeInfo
+     * @param selfLink
+     * @param accessInfo
+     * @param kind
+     */
+    public Item(String kind, String id, String etag, String selfLink, VolumeInfo volumeInfo, SaleInfo saleInfo, AccessInfo accessInfo, SearchInfo searchInfo) {
+        super();
+        this.kind = kind;
+        this.id = id;
+        this.etag = etag;
+        this.selfLink = selfLink;
+        this.volumeInfo = volumeInfo;
+        this.saleInfo = saleInfo;
+        this.accessInfo = accessInfo;
+        this.searchInfo = searchInfo;
+    }
 
     public String getKind() {
         return kind;

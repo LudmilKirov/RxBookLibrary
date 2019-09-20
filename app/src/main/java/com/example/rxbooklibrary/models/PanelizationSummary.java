@@ -13,6 +13,24 @@ public class PanelizationSummary {
     @Expose
     private Boolean containsImageBubbles;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public PanelizationSummary() {
+    }
+
+    /**
+     * 
+     * @param containsImageBubbles
+     * @param containsEpubBubbles
+     */
+    public PanelizationSummary(Boolean containsEpubBubbles, Boolean containsImageBubbles) {
+        super();
+        this.containsEpubBubbles = containsEpubBubbles;
+        this.containsImageBubbles = containsImageBubbles;
+    }
+
     public Boolean getContainsEpubBubbles() {
         return containsEpubBubbles;
     }

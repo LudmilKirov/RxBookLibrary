@@ -13,6 +13,24 @@ public class IndustryIdentifier {
     @Expose
     private String identifier;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public IndustryIdentifier() {
+    }
+
+    /**
+     * 
+     * @param type
+     * @param identifier
+     */
+    public IndustryIdentifier(String type, String identifier) {
+        super();
+        this.type = type;
+        this.identifier = identifier;
+    }
+
     public String getType() {
         return type;
     }
