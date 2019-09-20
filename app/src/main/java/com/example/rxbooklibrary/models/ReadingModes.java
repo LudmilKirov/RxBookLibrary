@@ -13,6 +13,24 @@ public class ReadingModes {
     @Expose
     private Boolean image;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public ReadingModes() {
+    }
+
+    /**
+     * 
+     * @param text
+     * @param image
+     */
+    public ReadingModes(Boolean text, Boolean image) {
+        super();
+        this.text = text;
+        this.image = image;
+    }
+
     public Boolean getText() {
         return text;
     }

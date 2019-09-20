@@ -16,6 +16,26 @@ public class SaleInfo {
     @Expose
     private Boolean isEbook;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public SaleInfo() {
+    }
+
+    /**
+     * 
+     * @param saleability
+     * @param isEbook
+     * @param country
+     */
+    public SaleInfo(String country, String saleability, Boolean isEbook) {
+        super();
+        this.country = country;
+        this.saleability = saleability;
+        this.isEbook = isEbook;
+    }
+
     public String getCountry() {
         return country;
     }

@@ -37,6 +37,40 @@ public class AccessInfo {
     @Expose
     private Boolean quoteSharingAllowed;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public AccessInfo() {
+    }
+
+    /**
+     * 
+     * @param webReaderLink
+     * @param textToSpeechPermission
+     * @param publicDomain
+     * @param viewability
+     * @param accessViewStatus
+     * @param pdf
+     * @param epub
+     * @param embeddable
+     * @param quoteSharingAllowed
+     * @param country
+     */
+    public AccessInfo(String country, String viewability, Boolean embeddable, Boolean publicDomain, String textToSpeechPermission, Epub epub, Pdf pdf, String webReaderLink, String accessViewStatus, Boolean quoteSharingAllowed) {
+        super();
+        this.country = country;
+        this.viewability = viewability;
+        this.embeddable = embeddable;
+        this.publicDomain = publicDomain;
+        this.textToSpeechPermission = textToSpeechPermission;
+        this.epub = epub;
+        this.pdf = pdf;
+        this.webReaderLink = webReaderLink;
+        this.accessViewStatus = accessViewStatus;
+        this.quoteSharingAllowed = quoteSharingAllowed;
+    }
+
     public String getCountry() {
         return country;
     }

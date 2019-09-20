@@ -10,6 +10,22 @@ public class Epub {
     @Expose
     private Boolean isAvailable;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Epub() {
+    }
+
+    /**
+     * 
+     * @param isAvailable
+     */
+    public Epub(Boolean isAvailable) {
+        super();
+        this.isAvailable = isAvailable;
+    }
+
     public Boolean getIsAvailable() {
         return isAvailable;
     }

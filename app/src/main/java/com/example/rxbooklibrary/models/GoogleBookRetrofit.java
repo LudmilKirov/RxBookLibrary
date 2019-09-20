@@ -15,7 +15,27 @@ public class GoogleBookRetrofit {
     private Integer totalItems;
     @SerializedName("items")
     @Expose
-    private List<Item> items;
+    private List<Item> items = null;
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public GoogleBookRetrofit() {
+    }
+
+    /**
+     * 
+     * @param items
+     * @param totalItems
+     * @param kind
+     */
+    public GoogleBookRetrofit(String kind, Integer totalItems, List<Item> items) {
+        super();
+        this.kind = kind;
+        this.totalItems = totalItems;
+        this.items = items;
+    }
 
     public String getKind() {
         return kind;
