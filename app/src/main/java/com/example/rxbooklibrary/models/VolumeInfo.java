@@ -334,4 +334,32 @@ public class VolumeInfo implements Parcelable {
             return new VolumeInfo[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VolumeInfo{" +
+                "title='" + title + '\'' +
+                ", subtitle='" + subtitle + '\'' +
+                ", authors=" + authors +
+                ", publisher='" + publisher + '\'' +
+                ", publishedDate='" + publishedDate + '\'' +
+                ", description='" + description + '\'' +
+                ", industryIdentifiers=" + industryIdentifiers +
+                ", readingModes=" + readingModes +
+                ", pageCount=" + pageCount +
+                ", printType='" + printType + '\'' +
+                ", categories=" + categories +
+                ", averageRating=" + averageRating +
+                ", ratingsCount=" + ratingsCount +
+                ", maturityRating='" + maturityRating + '\'' +
+                ", allowAnonLogging=" + allowAnonLogging +
+                ", contentVersion='" + contentVersion + '\'' +
+                ", panelizationSummary=" + panelizationSummary +
+                ", imageLinks=" + imageLinks +
+                ", language='" + language + '\'' +
+                ", previewLink='" + previewLink + '\'' +
+                ", infoLink='" + infoLink + '\'' +
+                ", canonicalVolumeLink='" + canonicalVolumeLink + '\'' +
+                '}';
+    }
 }

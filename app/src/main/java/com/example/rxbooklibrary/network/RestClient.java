@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RestClient {
 
+    //Set the base URL and then get the retrofit client
     public static final String BASE_URL = "https://www.googleapis.com/";
     private static Retrofit retrofit = null;
 
