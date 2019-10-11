@@ -127,4 +127,17 @@ public class Item {
         this.searchInfo = searchInfo;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "kind='" + kind + '\'' +
+                ", id='" + id + '\'' +
+                ", etag='" + etag + '\'' +
+                ", selfLink='" + selfLink + '\'' +
+                ", volumeInfo=" + volumeInfo +
+                ", saleInfo=" + saleInfo +
+                ", accessInfo=" + accessInfo +
+                ", searchInfo=" + searchInfo +
+                '}';
+    }
 }
