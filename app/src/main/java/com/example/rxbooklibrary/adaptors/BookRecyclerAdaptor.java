@@ -15,7 +15,7 @@ import com.example.rxbooklibrary.models.VolumeInfo;
 import java.util.ArrayList;
 
 public class BookRecyclerAdaptor extends RecyclerView.Adapter<BookRecyclerAdaptor.ViewHolder> {
-    private ArrayList<VolumeInfo> mVolumeInfos = new ArrayList<>();
+    private ArrayList<VolumeInfo> mVolumeInfos;
     private OnBookListener mOnBookListener;
 
     public BookRecyclerAdaptor(ArrayList<VolumeInfo> googleBookRetrofits,OnBookListener onBookListener) {
