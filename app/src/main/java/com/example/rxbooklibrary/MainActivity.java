@@ -10,9 +10,11 @@ import android.util.Log;
 import android.widget.LinearLayout;
 
 import com.example.rxbooklibrary.adaptors.BookRecyclerAdaptor;
+import com.example.rxbooklibrary.database.LibraryDBHelper;
 import com.example.rxbooklibrary.models.GoogleBookRetrofit;
 import com.example.rxbooklibrary.models.VolumeInfo;
 import com.example.rxbooklibrary.network.ApiCallInterface;
+import com.example.rxbooklibrary.network.AuthViewModel;
 import com.example.rxbooklibrary.network.RestClient;
 
 import java.util.ArrayList;
@@ -31,13 +33,23 @@ public class MainActivity extends AppCompatActivity implements BookRecyclerAdapt
     //Vars
     private ArrayList<VolumeInfo> mVolumeInfos = new ArrayList<>();
     private BookRecyclerAdaptor mBookRecyclerAdaptor;
+    LibraryDBHelper myDatabase;
+    AuthViewModel authViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mRecyclerView=findViewById(R.id.recyclerView);
+        myDatabase = new LibraryDBHelper(this);
+        addData();
         initRecyclerView();
         fakeBooks();
+    }
+
+    private void addData() {
+
+//        VolumeInfo volumeInfo;
+//        myDatabase.insertData(volumeInfo.getTitle(),volumeInfo.getPublisher(),volumeInfo.getDescription());
     }
 
     private void fakeBooks(){

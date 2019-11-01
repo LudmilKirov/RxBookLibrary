@@ -5,6 +5,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.List;
+import java.util.UUID;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -77,11 +79,8 @@ public class VolumeInfo implements Parcelable {
     @Expose
     private String canonicalVolumeLink;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public VolumeInfo() {
+    public VolumeInfo(){
+
     }
 
     /**
@@ -109,7 +108,7 @@ public class VolumeInfo implements Parcelable {
      * @param industryIdentifiers
      * @param maturityRating
      */
-    public VolumeInfo(String title, String subtitle, List<String> authors, String publisher, String publishedDate, String description, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, Integer pageCount, String printType, List<String> categories, Double averageRating, Integer ratingsCount, String maturityRating, Boolean allowAnonLogging, String contentVersion, PanelizationSummary panelizationSummary, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
+    public VolumeInfo(String title, String subtitle, List<String> authors, String publisher, String publishedDate, String description, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, Integer pageCount, String printType, List<String> categories, Double averageRating, Integer ratingsCount, String maturityRating, Boolean allowAnonLogging, String contentVersion, PanelizationSummary panelizationSummary, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink,UUID id) {
         super();
         this.title = title;
         this.subtitle = subtitle;
